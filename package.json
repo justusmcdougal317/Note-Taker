@@ -11,17 +11,16 @@
     "type": "git",
     "url": "https://github.com/justusmcdougal317/Note-Taker"
   },
-  "keywords": [
-    "Start"
-  ],
+  "keywords": ["Start"],
   "author": "Justus McDougal",
   "license": "ISC",
+  "engines": {
+    "node": "v20.9.0" 
+  },
   "dependencies": {
     "express": "^4.18.2"
-  }
-}
-{
-  "dependencies": {
+  },
+  "devDependencies": {
     "heroku": "^8.7.1"
   }
 }
