@@ -96,9 +96,7 @@ const handleNewNoteView = (e) => {
  
 };
 
-const renderNoteList = async (notes) => {
-  
-};
+
 
 
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
@@ -153,5 +151,5 @@ const renderNoteList = async (notes) => {
     noteListItems.forEach((note) => noteList[0].append(note));
   }
 };
-link rel="stylesheet" href="/style.css">
+
 getAndRenderNotes();
