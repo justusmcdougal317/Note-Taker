@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
 <html lang="en-US">
 <head>
   <meta charset="UTF-8" />
@@ -13,8 +23,6 @@
   <nav class="navbar bg-info">
     <a class="navbar-brand text-light p-3" href="/">Note Taker </a>
     <div class="icons">
-      <i class="fas fa-save text-light save-note"></i>
-      <i class="fas fa-plus text-light new-note"></i>
       <button type="button" class="btn btn-outline-light btn-sm save-note">
         <span class="fas fa-save"></span>
         <span>Save Note</span>
@@ -27,50 +35,36 @@
         <span class="fas fa-times"></span>
         <span>Clear Form</span>
       </button>
+      <button type="button" class="btn btn-sm btn-outline-danger delete-note">
+        <span class="fas fa-trash"></span>
+        <span>Delete Note</span>
+      </button>
     </div>
   </nav>
   <div class="container-fluid">
     <div class="row">
-<<<<<<< HEAD:myapp/notes.handlebars
-      <div class="col-4 list-container">
-        <div class="card">
-          <ul class="list-group" id="note-list">
-          </ul>
-=======
       <div class="col-4 list-container" id="list-container">
         <div class="card">
           <ul class="list-group"></ul>
->>>>>>> 2e5321d4f32ddd877c072ade70c6cb4912472002:myapp/notes.html
         </div>
       </div>
       <div class="col-8">
         <div class="card">
-<<<<<<< HEAD:myapp/notes.handlebars
-          <div class="note-container">
-            <strong contenteditable="true" class="note-title" style="display: block; margin: 10px 0;">Note Title</strong>
-            <div contenteditable="true" class="note-text" style="display: block; margin: 10px 0;">Note Text</div>
-            <button type="button" class="btn btn-outline-light btn-sm save-note">
-              <span class="fas fa-save"></span>
-              <span>Save Note</span>
-            </button>
+          <div class="note-title-container">
+            <label for="noteTitle">Note Title</label>
+            <input class="note-title" id="noteTitle" placeholder="Note Title" maxlength="28" type="text" />
           </div>
-=======
-          <form class="note-form">
-            <input class="note-title" placeholder="Note Title" maxlength="28" type="text" />
-            <textarea class="note-textarea" placeholder="Note Text"></textarea>
-          </form>
->>>>>>> 2e5321d4f32ddd877c072ade70c6cb4912472002:myapp/notes.html
+          <div class="note-text-container">
+            <label for="noteText">Note Text</label>
+            <textarea class="note-textarea" id="noteText" placeholder="Note Text"></textarea>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <script src="/myapp/index.js"></script>
-  <link rel="stylesheet" href="/style.css">
-<<<<<<< HEAD:myapp/notes.handlebars
   <script src="/myapp/server.js"></script>
-  <script src="/myapp/db.json"></script>
-=======
+  <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/myapp/style.css" />
->>>>>>> 2e5321d4f32ddd877c072ade70c6cb4912472002:myapp/notes.html
 </body>
 </html>
