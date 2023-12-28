@@ -1,24 +1,26 @@
 const express = require('express');
-const exphbs = require('express-handlebars');
+const hbs = require('hbs');
+const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Set up Handlebars as the view engine
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+// Set up HBS as the view engine
+app.set('view engine', 'hbs');
+hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
 
-// Set the path for views (assuming your main.handlebars is in a 'views' folder)
+// Set the path for views (assuming your main.hbs is in a 'views' folder)
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const dataFilePath = path.join(__dirname, 'db.json');
 
 app.get('/', (req, res) => {
-  // Assuming main.handlebars is your main template file
+  // Assuming main.hbs is your main template file
   res.render('main', { /* You can pass data to your template here if needed */ });
 });
 
@@ -51,11 +53,7 @@ app.post('/api/notes', (req, res) => {
 
     notes.push(newNote);
 
-<<<<<<< HEAD
-    fs.writeFile(dataFilePath, JSON.stringify(notes, null, 2), (err) => {
-=======
     fs.writeFile(dataFilePath, JSON.stringify(notes), (err) => {
->>>>>>> 2e5321d4f32ddd877c072ade70c6cb4912472002
       if (err) {
         console.error(err);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -69,11 +67,4 @@ app.post('/api/notes', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:3000`);
-<<<<<<< HEAD
-});
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'notes.handlebars'));
-=======
->>>>>>> 2e5321d4f32ddd877c072ade70c6cb4912472002
 });
